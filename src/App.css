@@ -1,38 +1,252 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+:root {
+  --primary: #9b59b6;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  box-sizing: border-box;
+  margin: 0;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  width: 100vw;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+.navBar {
+  width: 100vw;
+  height: 50px;
+  border: 1px solid black;
+  background-color: var(--primary);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+.navBar span {
+  margin-right: 20px;
+}
+.navBar .section {
+  display: flex;
+}
+.navBar .section a {
+  text-decoration: none;
+  color: white;
+  font-size: 21px;
+}
+.navBar .section li {
+  list-style-type: none;
+  margin-right: 20px;
+}
+.users {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  margin: 20px auto;
+}
+.userItem {
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.3);
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+}
+.userItem img {
+  height: 70px;
+  width: 70px;
+  margin-bottom: 10px;
+  border-radius: 50%;
+  margin-top: 20px;
+}
+.userItem a {
+  text-decoration: none;
+  background-color: black;
+  color: white;
+  padding: 5px 10px;
+  margin: 5px 0;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.userItem a:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.alert {
+  margin-top: 10px;
+  display: flex;
+  width: 100%;
+  background-color: black;
+  color: white;
+  padding: 10px;
+}
+.alert i {
+  margin-right: 5px;
+}
+.user {
+  margin: 10px 0;
+}
+.user button {
+  background-color: lightgray;
+  color: black;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+}
+.user button:active {
+  transform: scale(0.95);
+}
+.user .hiring {
+  margin-left: 20px;
+  align-items: center;
+  font-size: 18px;
+}
+.fas.fa-check-circle.green {
+  color: green;
+  font-size: 16px;
+}
+.fas.fa-times-circle.red {
+  color: red;
+  font-size: 16px;
+}
+.user .intro {
+  display: flex;
+  border: 0.5px solid black;
+  margin: 15px 0;
+}
+.user .intro .name,
+.location {
+  width: 50%;
+  padding: 10px;
+}
+.user .intro .name {
+  text-align: center;
+}
+.user .intro .name img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-bottom: 3px;
+}
+.user .intro .name h2,
+p {
+  margin-bottom: 3px;
+}
+.user .intro .location .githubProfileBtn {
+  background-color: rgba(0, 0, 0, 0.8);
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.user .intro .location .githubProfileBtn a {
+  text-decoration: none;
+  color: white;
+}
+.user .navButtons {
+  border: 0.5px solid black;
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.user .navButtons button {
+  font-size: 14px;
+  margin-right: 10px;
+  border-radius: 5px;
+  transform: scale(1);
+  cursor: default;
+}
+.user .navButtons .followers {
+  background-color: red;
+  color: white;
+}
+.user .navButtons .following {
+  background-color: green;
+  color: white;
+}
+.user .navButtons .gists {
+  color: white;
+  background-color: black;
+}
+.eachRepos {
+  width: 100%;
+  margin: 10px 0;
+  border: 1px solid black;
+  padding: 5px 10px;
+}
+.eachRepos h3 a {
+  text-decoration: none;
+  color: red;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (max-width: 420px) {
+  .navBar {
+    height: 100%;
+    flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+  .navBar div {
+    margin: 5px 0;
+  }
+  .users {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 250px) {
+  .navBar {
+    height: 100%;
+    flex-direction: column;
+  }
+  .navBar div {
+    margin: 6px 0;
+  }
+  .users {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media (max-width: 550px) {
+  .user .intro {
+    flex-direction: column;
+  }
+  .user .intro .name,
+  .location {
+    width: 100%;
+    text-align: center;
+  }
+  .user .navButtons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .user .navButtons button {
+    margin: 5px;
+  }
+}
+
+@media (max-width: 320px) {
+  .user .intro {
+    flex-direction: column;
+  }
+  .user .hired {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  .user .hired button {
+    margin: 5px 0;
+  }
+  .user .intro .name,
+  .location {
+    width: 100%;
+    text-align: center;
+  }
+  .user .navButtons {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .user .navButtons button {
+    margin: 5px 10px;
   }
 }
