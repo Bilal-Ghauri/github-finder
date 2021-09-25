@@ -6,7 +6,7 @@ import { BrowserRouter as Router , Switch , Route } from 'react-router-dom';
 import GithubState from './context/GithubState'
 import About from './components/links/About';
 import Home from './components/links/Home';
-
+import Error from './components/links/Error';
 const App = ()=>{
     return (
       <GithubState>
@@ -18,6 +18,7 @@ const App = ()=>{
                 <Route exact path="/" component={Home}></Route>
                 <Route exact path='/about' component={About}/>
                 <Route exact path='/user/:login' component={User}/>
+                <Route component = { Error}/>
               </Switch>
             </div>
           </div>
