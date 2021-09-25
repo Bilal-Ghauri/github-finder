@@ -50,7 +50,7 @@ const User = ({ match })=> {
                             <button className="repos">Public Repos : {public_repos}</button>
                             <button className="gists">Public Gists : {public_gists}</button>
                     </div>
-                    <Repos />
+                    <Repos repos= {repos}/>
                 </div>
             )
         }

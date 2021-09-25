@@ -30,7 +30,7 @@ const Search = ()=> {
                 style = {{margin:'10px 0', width:'100%', border:'none' , padding:'6px 0', cursor:'pointer', backgroundColor:"rgba(0,0,0,1)", color:"white"}}/>
             </form>
             
-            {users  && ( <button onClick={clearUser}
+            {users.length > 0  && ( <button onClick={clearUser}
             style={{width:'100%',cursor:'pointer',padding:'6px 0', border:'none'}}>
                 Clear
             </button>)}

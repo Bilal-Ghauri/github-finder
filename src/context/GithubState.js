@@ -27,7 +27,7 @@ const GithubState = props => {
         let res = await axios.get(`https://api.github.com/users/${username}/repos?per_page=5&sort=created:asc&clientId=${process.env.REACT_APP_Client_ID}&clientSecret=${process.env.REACT_APP_Client_Secret}`)
         dispatch({
             type: GET_REPOS,
-            payload: res.data.items
+            payload: res.data
         })
     }
 
